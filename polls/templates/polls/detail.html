@@ -4,24 +4,38 @@
 <head>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i|Scope+One" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
 </head>
 
 <body>
   <div class="container">
-    <h1>{{ question.question_text }}</h1>
+    <div class="row header">
+      <h1>{{ question.question_text }}</h1>
+    </div>
 
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <hr>
+    <br>
 
-    <form action="{% url 'polls:vote' question.id %}" method="post">
-    {% csrf_token %}
-    {% for choice in question.choice_set.all %}
-        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-    {% endfor %}
-    <input type="submit" value="Vote" />
-    </form>
+    <div class="row choices">
+      <form action="{% url 'polls:vote' question.id %}" method="post">
+      {% csrf_token %}
+      {% for choice in question.choice_set.all %}
+          <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"/>
+          <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+      {% endfor %}
+      <br>
+      <br>
+      <div class="row error">
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      </div>
+      <br>
+      <input class="vote-button" type="submit" value="Vote"/>
+      </form>
+    </div>
+
   </div>
+
 </body>
 
 </html>

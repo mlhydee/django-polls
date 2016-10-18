@@ -3,11 +3,44 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-li a {
-  color: green;
+ul {
+  list-style: none;
+}
+
+li, a {
+  color: #737373;
+  font-size: 2em;
+}
+
+li a:hover {
+  font-style: italic;
+  text-decoration: none;
+  color: #1a1a1a
 }
 
 .header h1 {
   font-family: 'Scope One', serif;
   font-size: 6em;
+}
+
+.choices label {
+  font-size: 2em;
+  margin: 0 50px 0 10px;;
+}
+
+.vote-button {
+  font-size: 1.5em;
+  background-color: #41ad56;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 20px 0 20px;
+}
+
+.vote-button:hover {
+  background-color: #35906b;
+}
+
+.error {
+  color: red;
 }
