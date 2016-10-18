@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+li a {
+  color: green;
+}
+
+.header h1 {
+  font-family: 'Scope One', serif;
+  font-size: 6em;
+}
