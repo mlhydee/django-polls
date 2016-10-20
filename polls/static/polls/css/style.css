@@ -18,6 +18,12 @@ li a:hover {
   color: #1a1a1a
 }
 
+li a:active {
+  font-style: italic;
+  text-decoration: none;
+  color: #1a1a1a
+}
+
 .header h1 {
   font-family: 'Scope One', serif;
   font-size: 6em;
